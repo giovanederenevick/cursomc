@@ -13,11 +13,11 @@ import com.giovanederenevick.cursomc.services.exceptions.ObjectNotFoundException
 public class ClienteService {
 	
 	@Autowired
-	private ClienteRepository categoriaRepository;
+	private ClienteRepository clienteRepository;
 
 	public Cliente buscar(Integer id){
 		
-		Optional<Cliente> obj = categoriaRepository.findById(id);
+		Optional<Cliente> obj = clienteRepository.findById(id);
 		
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
 				"Objeto não encontrado! ID: " + id + ", Tipo: " + Cliente.class.getName()));
