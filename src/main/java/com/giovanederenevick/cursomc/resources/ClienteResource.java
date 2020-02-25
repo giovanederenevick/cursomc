@@ -15,12 +15,12 @@ import com.giovanederenevick.cursomc.services.ClienteService;
 public class ClienteResource {
 	
 	@Autowired
-	private ClienteService clienteService;
+	private ClienteService service;
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
-	public ResponseEntity<?> find(@PathVariable Integer id){
+	public ResponseEntity<Cliente> find(@PathVariable Integer id){
 		
-		Cliente obj = clienteService.buscar(id);
+		Cliente obj = service.find(id);
 		
 		return ResponseEntity.ok().body(obj);
 		}
